@@ -1,0 +1,13 @@
+Things to do
+Set frame, spacing for margins, paddings and container widths
+Media breakpoints
+Insert my colour palette as variables
+Design mobile first
+Font styles and sizing
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
