@@ -1,13 +1,40 @@
-Things to do
+/* Things to do
 Set frame, spacing for margins, paddings and container widths
 Media breakpoints
 Insert my colour palette as variables
 Design mobile first
 Font styles and sizing
+no text transform*/
 
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: system-ui;
+}
+
+header {
+  background-color: #141B41;
+  color: white;
+  top: 0;
+  width:auto;
+  text-align: center;
+  position: sticky;
+  padding: 16px;
+  flex-flow: row wrap;
+}
+
+/* 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-  }
+  } */
