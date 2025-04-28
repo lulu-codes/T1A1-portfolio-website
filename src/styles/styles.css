@@ -6,35 +6,76 @@ Design mobile first
 Font styles and sizing
 no text transform*/
 
+:root {
+	--color-main-bg: rgb(152, 185, 242, 0.2);
+	--color-white: #FFFFFF;
+	--color-black: #000000;
+
+	--color-primary-dark: #141b41;
+	--color-primary: #306bac;
+	--color-secondary: #6f9ceb;
+	--color-secondary-light: #92b8ef;
+	--color-accent: #918ef4;
+	--color-accent-bright: #00ecae;
+
+	--btn-default: #98b9f2;
+	--btn-hover: #6f9ceb;
+	--btn-cta: #00ecae;
+	
+
+	/* to call on variable colour: var(--textColour); */
+}
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  margin: 0;
+	margin: 0;
 }
 
 body {
-  font-family: system-ui;
+	font-family: system-ui;
 }
 
+/* Header and navigation bar */
 header {
-  background-color: #141B41;
-  color: white;
-  top: 0;
-  width:auto;
-  text-align: center;
-  position: sticky;
-  padding: 16px;
-  flex-flow: row wrap;
+	background-color: #141B41;
+	color: white;
+	top: 0;
+	width:auto;
+	text-align: center;
+	position: sticky;
+	padding: 16px;
+	flex-flow: row wrap;
 }
 
-/* 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  } */
+nav {
+	display: inline-block;
+}
+
+h1 {
+	display: block;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+h2.hero {
+	color: white;
+}
+
+/* Submit button on Contact page for contact form */
+.button {
+	background-color: #6F9CEB;
+	text-align: center;
+	display: inline-block;
+	padding: 16px;
+}
+	/* 
+	.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	} */
