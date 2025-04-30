@@ -1,16 +1,26 @@
-/* Things to do
-Set frame, spacing for margins, paddings and container widths
-Media breakpoints
-Insert my colour palette as variables
-Design mobile first
-Font styles and sizing
-no text transform*/
+/* Font styles: Poppins for headings and Inter for body.
+Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs' */
+@import url("https://fonts.googleapis.com/css?family=Poppins|Inter|Roboto");
 
+/* Setting border box properties */
+* {
+	box-sizing: border-box;
+}
+
+/* Setting margin layout to 0 */
+* {
+	margin: 0;
+}
+
+
+/* Declaring colours as variables in root (to call on variable colour: var(--); */
+/* Base colours for background and base text */
 :root {
-	--color-main-bg: rgb(152, 185, 242, 0.2);
+	--color-background-light: #98b9f233;
 	--color-white: #FFFFFF;
 	--color-black: #000000;
 
+/* Primary and secondary colours themes for website */
 	--color-primary-dark: #141b41;
 	--color-primary: #306bac;
 	--color-secondary: #6f9ceb;
@@ -18,53 +28,175 @@ no text transform*/
 	--color-accent: #918ef4;
 	--color-accent-bright: #00ecae;
 
+/* Colours for different button status */
 	--btn-default: #98b9f2;
 	--btn-hover: #6f9ceb;
 	--btn-cta: #00ecae;
+}
+
+	/* --nav-btn-active: rgba(145, 142, 244, 0.70);
+	--nav-btn-inactive: rgba(145, 142, 244, 0.30);
+	--nav-btn-visited:  */
+
+/* Visual border outline guide - REMOVE LATER */
+* {
+	border-style: dashed;
+	border-color: red;
+	border-width: 1px;
+}
+
+/* HEADER NAVIGATION BAR STYLING */
+/* Base header styling and layout properties */
+.header {
+	background-color: var(--color-primary-dark);
+	padding: 16px;
+	width: 100vw;
+	top: 0;
+	position: sticky;
+	overflow: hidden;
+}
+
+/* Header container */
+.header_container {
+	width: 100%;
+	display: flex;
+	justify-content:flex-start;
+	gap: 64px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+/* Website logo sizing */
+#site-logo {
+	width: 50px;
+	height: 50px;
+	justify-self: flex-start;
+}
+
+/* Portfolio title styling */
+.header,.h1 {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	color: white;
+	text-transform: uppercase;
+}
+
+
+/* Nav bar links */
+.nav-bar {
+	display: flex;
+	align-items: center;
+}
+
+.nav-link {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	color: var(--color-white);
+	text-transform: uppercase;
+	border-style: solid;
+	border-color: var(--color-white);
+	border-radius: 32px;
+	text-align: center;
+	padding: 8px;
+	text-decoration: none;
+}
+  
+/* Links - change color on hover */
+
+
+/* TO DO: Create HTML and CSS burger menu with page links
+vertical-align and place in top right corner for nav burger menu */
+
+
+/* HERO SECTION STYLING & LAYOUT */
+.hero {
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.profile-photo {
+	width: 50%;
+	max-width: 240px;
+}
+
+.hero-intro-text {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	#my-name {
+		color: var(--color-secondary);
+		}
+
+	.role {
+		color: var(--color-secondary);
+	}
+}
+
+
+/* CONTENT SECTIONS LAYOUT & STYLING */
+/* Auto width for section headings containers */
+
+
+.hero_container,
+.about_container,
+.skills_container,
+.projects_container,
+.career_container,
+.contact_container {
+	width: auto;
+	max-width: 1200px;
+	margin: 0;
+	padding: 16px;
+}
+
+/* Alternating sections have light blue background to separate content sections */
+section:nth-of-type(even) {
+	background-color: var(--color-background-light);
+}
+
+
+
+/* Layout for icon and section headings containers */
+.icon_heading_container {
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Sizing and styling for material symbols icon */
+.material-symbols-rounded {
+	color: var(--color-black);
+}
+
+/* Styling for section headings */
+.section-heading {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	color: var(--color-primary-dark);
+	text-transform: uppercase;
+}
+
+.footer-heading {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--color-primary-dark);
+	text-transform: uppercase;
+}
+/* Declaring font styles as variables in root */
+/* Font styles: Poppins for headings and Inter for body - import from Google fonts and have a back up font to fall back on */
 	
 
-	/* to call on variable colour: var(--textColour); */
+* p {
+	font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
+	font-size: 1rem;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-* {
-	margin: 0;
-}
-
-body {
-	font-family: system-ui;
-}
-
-/* Header and navigation bar */
-header {
-	background-color: #141B41;
-	color: white;
-	top: 0;
-	width:auto;
-	text-align: center;
-	position: sticky;
-	padding: 16px;
-	flex-flow: row wrap;
-}
-
-nav {
-	display: inline-block;
-}
-
-h1 {
-	display: block;
-	font-size: 2em;
-	font-weight: bold;
-}
-
-h2.hero {
-	color: white;
-}
 
 /* Submit button on Contact page for contact form */
 .button {
@@ -73,9 +205,34 @@ h2.hero {
 	display: inline-block;
 	padding: 16px;
 }
-	/* 
-	.container {
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
-	} */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    * {
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    * {
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    * {
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    * {
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    * {
+    }
+}

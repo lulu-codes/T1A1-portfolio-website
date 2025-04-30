@@ -6,8 +6,10 @@
 	<title>Nhi Huynh - Professional Portfolio</title>
 	<!-- Linking to my CSS stylesheet -->
 	<link rel="stylesheet" href="./src/styles/styles.css">
-	<!-- Linking stylesheet for Google Icons -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- Linking to Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Inter|Roboto">
+	<!-- Linking stylesheet for Google Symbols icon -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
 	<!-- Linking to my Favicon icon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon_io/favicon-32x32.png">
@@ -17,78 +19,153 @@
 
 <body>
 
-	<!-- Header and navigation bar section -->
+
+	<!-- Top Navigation bar section for desktop -->
 	<header class="header">
-		<h1>Nhi Huynh Portfolio</h1>
-			<nav class="navbar">
-				<a href="index.html">Home</li>
-				<a href="about.html">About Me</a></li>
-				<a href="skills.html">Industry Skills</a></li>
-				<a href="projects.html">Projects</a></li>
-				<a href="career-history.html">Career History</a></li>
-				<a href="contact.html">Contact Me</a></li>
+		<!-- Container wrapping all nav components together, sticky top header, align center and auto width -->
+		<div class="header_container">
+			<!-- Logo and Portfolio Title linked to Home -->
+			<a href="index.html">
+			<img id="site-logo" src="./src/images/my-website-logo.svg" alt="My website logo">
+			</a>
+			<h1>Nhi Huynh<br>Portfolio</h1>
+			<nav class="nav-bar">
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="about.html" class="nav-link">About Me</a>
+				<a href="skills.html" class="nav-link">Industry Skills</a>
+				<a href="projects.html" class="nav-link">Projects</a>
+				<a href="career-history.html" class="nav-link">Career History</a>
+				<a href="contact.html" class="nav-link" id="btn-nav-cta">Contact Me</a>
 			</nav>
+		</div>
 	</header>
-	
+		<!-- <label class="burger-menu">
+			<input type="checkbox"/>
+		</label>
+		<aside class="nav-burger-menu">
+			<nav>
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="about.html" class="nav-link">About Me</a>
+				<a href="skills.html" class="nav-link">Industry Skills</a>
+				<a href="projects.html" class="nav-link">Projects</a>
+				<a href="career-history.html" class="nav-link">Career History</a>
+				<a href="contact.html" class="nav-link">Contact Me</a>
+			</nav>
+		</aside> -->
+
+
+<!-- Flex direction for section containers to align column  -->
+<main class="main">
+
 	<!-- Hero section on landing page -->
-	<main>
-		<section class="hero">
-			<h2>Hi I'm Nhi<br>I’m on the journey to becoming a Full Stack Web Developer</h2>
-			<img src="./src/images/profile-photo.png" alt="Photo of me, Nhi" width="240">
-			<p>Driven by a passion for<br>
-			human-centred design,<br>
-			a problem-solving mindset,<br>
-			and commitment to learning,<br>
-			my goal is to bring ideas to life through digital experiences that just feel right.</p>
-			<button type="button" autofocus>Contact Me</button>
-		</section>
-		
-		<!-- About Me section on landing page -->	
-		<section class="about">
-			<h3>About Me</h3>
+	<section class="hero">
+		<div class="hero_container">
+		<!-- Hero intro heading -->
+			<h2 class="hero-intro-text">Hi I'm <span id="my-name">Nhi</span>,<br>
+				I’m on the journey to becoming a<br>
+				<b class="role">Full Stack Web Developer</b>
+			</h2>
+			<!-- Profile photo box - add border with radius, align center -->
+			<img class="profile-photo" src="./src/images/profile-photo.png" alt="Photo of me, Nhi">
+			<!-- Hero subtext, add styling and line breaks, align left/center? -->
+			<p class="hero-sub-text">
+				Driven by a passion for<br>
+				<b>human-centred design,</b><br>
+				a <b>problem-solving mindset,</b><br>
+				and <b>commitment to learning,</b><br>
+				<em>my goal is to bring ideas to life through digital experiences that just feel right.</em>
+			</p>
+			<!-- Hero section CTA button - for mobile use Contact Me, for wide tablet + desktop use Contact Me/Download CV -->
+			<button class="button-hero" type="button" autofocus>Contact Me</button>
+		</div>
+	</section>
+	
+	<!-- About Me section on landing page -->	
+	<section class="about" id="about">
+		<!-- Outer container for About section -->
+		<div class="about_container">
+			<!-- Container including icon and section heading elements (to introduce new content sections)-->
+			<div class="icon_heading_container">
+				<i class="material-symbols-rounded" aria-labelledby="person icon">person</i>
+				<h3 class="section-heading">About Me</h3>
+			</div>
 			<p>About me short intro</p>
 			<button type="button">Get to know me</button>
-		</section>
-		
-		<!-- Industry Skills section on landing page -->		
-		<section class="skills">
-			<h3>Industry Skills</h3>
-			<p>Programming Languages</p>
-			<div class="programming-languages">
+		<div>
+	</section>
+	</div>
+	<!-- Industry Skills section on landing page -->		
+	<section class="skills" id="skills">
+		<!-- Outer container for skills section -->
+		<div class="skills_container">
+			<!-- Container including icon and section heading elements (to introduce new content sections)-->
+			<div class="icon_heading_container">
+				<i class="material-symbols-rounded" aria-labelledby="skills icon">code_blocks</i>
+				<h3 class="section-heading">Industry Skills</h3>
 			</div>
-			<button type="button">Explore my toolkit</button>
-		</section>
+		<div>
 		
-		<!-- Projects section on landing page -->
-		<section class="projects">
-			<h3>Projects</h3>
+		<div class="programming-languages">
+
+		</div>
+
+		<button type="button">Explore my toolkit</button>
+	</section>
+	
+	<!-- Projects section on landing page -->
+	<section class="projects" id="projects">
+		<!-- Outer container for projects section -->
+		<div class="projects_container">
+			<!-- Container including icon and section heading elements (to introduce new content sections)-->
+			<div class="icon_heading_container">
+				<i class="material-symbols-rounded" aria-labelledby="projects icon">deployed_code</i>
+				<h3 class="section-heading">Projects</h3>
+			</div>
+			<div class="project-card">
 			<p>Project cards</p>
 			<button type="button">Explore all projects</button>
-		</section>
+			</div>
+		</div>
+	</section>
 
-		<!-- Career section on landing page -->
-		<section class="career-history">
-			<h3>Career History</h3>
-			<p>Career cards</p>
-			<button type="button">Download CV</button>
-			<button type="button">My career journey</button>
-		</section>
-		
-		<!-- Contact section on landing page -->
-		<section class="contact">
-			<h3>Contact Me</h3>
-			<p>Find me on LinkedIn, GitHub, shoot me an email or fill out the contact form in below link.</p>
-			<button type="button">Get in touch</button>
-		</section>
-	</main>
+	<!-- Career section on landing page -->
+	<section class="career-history" id="career">
+		<!-- Outer container for career section -->
+		<div class="career_container">
+			<!-- Container including icon and section heading elements (to introduce new content sections)-->
+			<div class="icon_heading_container">
+				<i class="material-symbols-rounded" aria-labelledby="career icon">work</i>
+				<h3 class="section-heading">Career History</h3>
+			</div>
+		<div>
+		<p>Career cards</p>
+		<button type="button">Download CV</button>
+		<button type="button">My career journey</button>
+	</section>
+	
+	<!-- Contact section on landing page -->
+	<section class="contact" id="contact">
+		<!-- Outer container for contact section -->
+		<div class="contact_container">
+			<!-- Container including icon and section heading elements (to introduce new content sections)-->
+			<div class="icon_heading_container">
+				<i class="material-symbols-rounded" aria-labelledby="mail contact icon">mail</i>
+				<h3 class="section-heading">Contact Me</h3>
+			</div>
+		<div>
+		<p>Find me on LinkedIn, GitHub, shoot me an email or fill out the contact form in below link.</p>
+		<button type="button">Get in touch</button>
+	</section>
+</main>
 
-	<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
-	<footer class="footer">
-		<h4>Let's Connect!</h4>
-		<a href="https://www.linkedin.com/in/nhi-huynh-50268a169/">LinkedIn</a>
-		<a href="https://github.com/lulu-codes">GitHub</a>
-		<a href="mailto:16298@coderacademy.com.au">Email</a>
-		<p>© 2025 Nhi Huynh. All rights reserved.</p>
-	</footer>
+<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
+<footer class="footer">
+	<h3 class="footer-heading">Let's Connect!</h3>
+	<a href="https://www.linkedin.com/in/nhi-huynh-50268a169/">LinkedIn</a>
+	<a href="https://github.com/lulu-codes">GitHub</a>
+	<a href="mailto:16298@coderacademy.com.au">Email</a>
+	<p>&#169; 2025 Nhi Huynh. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
