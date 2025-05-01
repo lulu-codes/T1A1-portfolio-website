@@ -1,26 +1,20 @@
+/* Import > :root > global styles > element styles */
+
+
 /* Font styles: Poppins for headings and Inter for body.
 Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs' */
-@import url("https://fonts.googleapis.com/css?family=Poppins|Inter|Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Setting border box properties */
-* {
-	box-sizing: border-box;
-}
-
-/* Setting margin layout to 0 */
-* {
-	margin: 0;
-}
-
-
-/* Declaring colours as variables in root (to call on variable colour: var(--); */
-/* Base colours for background and base text */
+/* ROOT COLOUR VARIABLES = to easily apply variable colours: var(--); */
 :root {
+	/* Base colours for background and base text */
 	--color-background-light: #98b9f233;
-	--color-white: #FFFFFF;
 	--color-black: #000000;
+	--color-white: #FFFFFF;
 
-/* Primary and secondary colours themes for website */
+	/* Primary, secondary and accent colour themes for website */
 	--color-primary-dark: #141b41;
 	--color-primary: #306bac;
 	--color-secondary: #6f9ceb;
@@ -28,7 +22,7 @@ Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs
 	--color-accent: #918ef4;
 	--color-accent-bright: #00ecae;
 
-/* Colours for different button status */
+	/* Colours for different button states */
 	--btn-default: #98b9f2;
 	--btn-hover: #6f9ceb;
 	--btn-cta: #00ecae;
@@ -38,108 +32,248 @@ Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs
 	--nav-btn-inactive: rgba(145, 142, 244, 0.30);
 	--nav-btn-visited:  */
 
-/* Visual border outline guide - REMOVE LATER */
+	
+/* SETTING BORDER BOX PROPERTIES */
 * {
+	box-sizing: border-box;
+}
+
+/* Visual border outline guide - REMOVE LATER */
+/* * {
 	border-style: dashed;
 	border-color: red;
 	border-width: 1px;
+} */
+
+/* SETTING MARGIN LAYOUT TO 0 */
+* {
+	margin: 0;
 }
 
-/* HEADER NAVIGATION BAR STYLING */
-/* Base header styling and layout properties */
-.header {
-	background-color: var(--color-primary-dark);
-	padding: 16px;
-	width: 100vw;
-	top: 0;
-	position: sticky;
-	overflow: hidden;
-}
-
-/* Header container */
-.header_container {
-	width: 100%;
-	display: flex;
-	justify-content:flex-start;
-	gap: 64px;
-	padding-left: 16px;
-	padding-right: 16px;
-}
-
-/* Website logo sizing */
-#site-logo {
-	width: 50px;
-	height: 50px;
-	justify-self: flex-start;
-}
-
-/* Portfolio title styling */
-.header,.h1 {
+/* DEFAULT FONT FAMILY AND FONT SIZE (For mobile = 16px = 1rem). Add fallback font-family style */
+body {
 	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
 	font-size: 1rem;
-	color: white;
-	text-transform: uppercase;
 }
 
 
-/* Nav bar links */
-.nav-bar {
+/* HEADER STYLING */
+/* Sticky header applied to stay at top of screen */
+/* Height for mobile 64px (4rem), tablet 80px (5rem), desktop 128px (8rem) */
+/* Vertical sides padding for mobile 16px (1rem), tablet 32px (2rem), desktop 48px (3rem) */
+/* Mobile first design, so default sizes applied for mobile, then add media queries for adjustments to tablet and desktop */
+.header {
+	top: 0;
+	position: sticky;
+	width: 100%;
+	background-color: var(--color-primary-dark);
+	padding: 0 1rem;
+	z-index: 10;
+	min-height: 4rem;
+	max-height: 4rem;
+}
+
+/* Media query for height of header adjustments across different devices for TABLET. */
+@media (min-width: 768px) {
+	.header {
+		padding: 0 2rem;
+		min-height: 5rem;
+		max-height: 5rem;
+	}
+}
+
+/* Media query for height of header adjustments across different devices for DESKTOP. */
+@media (min-width: 1024px) {
+	.header {
+		padding: 0 3rem;
+		min-height: 8rem;
+		max-height: 8rem;
+	}
+}
+/* HEADER AND NAVIGATION OUTER CONTAINER TO STYLE LAYOUT */
+.header__container {
 	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
 	align-items: center;
 }
 
-.nav-link {
-	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+/* <!-- Site brand container to wrap logo + title for side by side layout and positioned at the start of header container --> */
+.site-brand__wrapper {
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Site Logo sizing and constraints */
+#site-logo {
+	display: block;
+	width: 44px;
+	height: 44px;
+}
+
+/* Portfolio title styling */
+#portfolio-title {
+	display: block;
 	font-size: 1rem;
 	color: var(--color-white);
 	text-transform: uppercase;
-	border-style: solid;
-	border-color: var(--color-white);
-	border-radius: 32px;
-	text-align: center;
-	padding: 8px;
-	text-decoration: none;
 }
-  
+
+/* BURGER MENU NAV (for mobile and tablet) */
+
+/* Removing bullet points from nav links list */
+.burger-menu ul li {
+	list-style-type: none;
+	display: block;
+	display: none;
+}
+
+/* Adjust sizing and colour of burger menu icon and 'menu' label to White (min button for mobile 44px). Used 3rem = 48px */
+#burger-menu-icon > .material-symbols-rounded {
+	color: var(--color-white);
+	display: block;
+}
+
+#burger-menu-icon > p {
+	color: var(--color-white);
+	display: block;
+}
+
+/* NEED HELP WITH THIS */
+#burger-menu-toggle {
+	transform: scale(3.5);
+}
+
+/* Mobile first design, desktop nav bar hidden, media breakpoint added below to when to show desktop bar */
+.desktop-nav-bar {
+	display: none;
+}
+
+/* Show desktop nav bar @ media breakpoint 992px+ for desktop*/
+/* @media screen and (min-width: 992px) {
+	.desktop-nav-bar {
+		display: flex;
+	}
+} */
+
+/* Desktop Nav bar */
+/* .desktop-nav-bar {
+	display: flex;
+	align-items: center;
+	width: 100%;
+} */
+
+/* .desktop-nav-bar a {
+	width: fit-content;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: center;
+} */
+
+/* .nav-links__container {
+	justify-content: space-between;
+	gap: 1rem;
+} */
+
+/* Desktop CTA button */
+/* .nav-cta__container {
+	justify-content: end;
+} */
+
+/* Style CTA nav button */
+/* id="nav-link-cta" */
+
+/* .desktop-nav-bar a {
+	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--color-white);
+	/* background-color: var(--color-secondary-light);
+	border-style: 2px solid var(--color-white);
+	border-radius: 32px;
+	padding: 0.5rem;
+}
+	*/
+ 
+
 /* Links - change color on hover */
 
 
 /* TO DO: Create HTML and CSS burger menu with page links
 vertical-align and place in top right corner for nav burger menu */
 
+.main__container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1440px;
+}
 
 /* HERO SECTION STYLING & LAYOUT */
-.hero {
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.profile-photo {
-	width: 50%;
-	max-width: 240px;
-}
 
 .hero-intro-text {
-	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
 	font-size: 2rem;
 	font-weight: bold;
 	text-align: center;
-	#my-name {
-		color: var(--color-secondary);
+		strong {
+			color: var(--color-secondary);
 		}
-
-	.role {
-		color: var(--color-secondary);
-	}
 }
 
+.profile-photo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-photo {
+	display: flex;
+	width: 50%;
+	max-width: 240px;
+	/* BORDER STYLING + box shadow */
+	/* border-style: solid;
+	border-width: 4px;
+	border-color: var(--color-accent); */
+	border: 2px solid var(--color-accent);
+	border-radius: 2rem;
+	box-shadow: 0.5rem 0.5rem 0.5rem var(--color-accent);
+}
+
+.hero-sub-text {
+	text-align: center;
+	color: var(--color-primary-dark);
+	font-size: 1.1rem;
+	font-weight: 500;
+	line-height: 2rem;
+		b {
+			color: var(--color-primary);
+		}
+}
+
+.btn {
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding: 1rem;
+	border-radius: 2rem;
+	font-weight: 700;
+	background-color: var(--color-secondary-light);
+	margin: 1rem;
+}
+
+.btn-hero--cta {
+	background-color: var(--btn-cta);
+}
 
 /* CONTENT SECTIONS LAYOUT & STYLING */
 /* Auto width for section headings containers */
 
-
+.profile-photo-container,
 .hero_container,
 .about_container,
 .skills_container,
@@ -170,6 +304,8 @@ section:nth-of-type(even) {
 /* Sizing and styling for material symbols icon */
 .material-symbols-rounded {
 	color: var(--color-black);
+	transform: scale(1.5);
+	margin: 1rem;
 }
 
 /* Styling for section headings */
@@ -207,32 +343,4 @@ section:nth-of-type(even) {
 }
 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    * {
-    }
-}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    * {
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    * {
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    * {
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    * {
-    }
-}
