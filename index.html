@@ -20,64 +20,56 @@
 </head>
 
 <body>
-
-<!-- Update semantic to use BEM naming convention as I was getting confused between differentiating blocks vs elements vs modifiers -->
-	<!-- Header - Design top Navigation bar section for desktop + collapsable burger menu for mobile and tablet -->
-	<!-- Header = Sticky header to top of screen -->
 	<header class="header">
-		<!-- Container wrapping all header components = site brand (logo + title) + nav bar links -->
 		<div class="header__container">
-			<!-- Site brand container to wrap logo + title for side by side layout and positioned at the start of header container -->
-			<div class="site-brand__wrapper">
-				<!-- My website logo with link to Homepage + Portfolio Title -->
+			<div class="header-brand__wrapper">
 				<a href="index.html">
-					<img id="site-logo" src="./src/images/my-website-logo.svg" alt="My website logo">
+					<img class="header__site-logo" src="./src/images/my-website-logo.svg" alt="My custom website logo">
 				</a>
-				<h1 id="portfolio-title">Nhi Huynh<br>Portfolio</h1>
+				<h1 class="header__portfolio-title">Nhi Huynh<br>Portfolio</h1>
 			</div>
-			
-			<!-- Tablet and Mobile navigation = collapsable burger menu (for devices width 360-768px) -->
-			<nav class="mobile-tablet-nav">
-				<div class="burger-menu">
-					<input type="checkbox" id="burger-menu-toggle" class="burger-menu-toggle"/>
-					<label for="burger-menu-toggle" id="burger-menu-icon">
-						<span class="material-symbols-rounded">menu</span>
-						<p>MENU</p>
+			<!-- MOBILE & TABLET NAVIGATION = collapsable burger menu (for devices width 360-768px) -->
+			<nav class="nav nav--mobile-tablet">
+				<div class="burger-menu__container">
+					<input type="checkbox" id="burger-menu__toggle"/>
+					<label for="burger-menu__toggle" class="burger-menu__toggle-wrapper">
+						<p class="burger-menu__label-text">MENU</p>
+						<span class="material-symbols-rounded" id="burger-menu__icon">menu</span>
+						<span class="material-symbols-rounded" id="burger-menu__close-icon">close</span>
 					</label>
-					<ul>
-						<li><a href="index.html" class="home__link"aria-current="page">Home</a></li>
-						<li><a href="about.html" class="about__link">About Me</a></li>
-						<li><a href="skills.html" class="skills__link">Industry Skills</a></li>
-						<li><a href="projects.html" class="projects__link">Projects</a></li>
-						<li><a href="career-history.html" class="career__link">Career History</a></li>
-						<li><a href="contact.html" class="contact__link">Contact Me</a></li>
+					<ul class="burger-menu__list">
+						<li><a href="index.html" class="burger-menu__nav-link" id="home-link" aria-current="page">Home</a></li>
+						<li><a href="about.html" class="burger-menu__nav-link" id="about-link">About Me</a></li>
+						<li><a href="skills.html" class="burger-menu__nav-link" id="skills-link">Industry Skills</a></li>
+						<li><a href="projects.html" class="burger-menu__nav-link" id="projects-link">Projects</a></li>
+						<li><a href="career-history.html" class="burger-menu__nav-link" id="career-link">Career History</a></li>
+						<li><a href="contact.html" class="burger-menu__nav-link" id="contact-link">Contact Me</a></li>
 					</ul>
 				</div>
 			</nav>
-
-			<!-- Desktop navigation (for devices over 768px width)-->
-			<nav class="desktop-nav-bar">
-				<div class="nav-links__container">
-					<a href="index.html" class="home__link"aria-current="page">Home</a>
-					<a href="about.html" class="about__link">About Me</a>
-					<a href="skills.html" class="skills__link">Industry Skills</a>
-					<a href="projects.html" class="projects__link">Projects</a>
-					<a href="career-history.html" class="career__link">Career History</a>
+			<!-- DESKTOP & LAPTOP NAVIGATION = header nav bar (for devices over 992px / or 1024px? width) -->
+			<nav class="nav nav--desktop-laptop">
+				<div class="nav-bar__container">
+					<ul class="nav-bar__list">
+						<li><a href="index.html" class="nav-bar__link" id="home-link" aria-current="page">Home</a></li>
+						<li><a href="about.html" class="nav-bar__link" id="about-link">About Me</a></li>
+						<li><a href="skills.html" class="nav-bar__link" id="skills-link">Industry Skills</a></li>
+						<li><a href="projects.html" class="nav-bar__link" id="projects-link">Projects</a></li>
+						<li><a href="career-history.html" class="nav-bar__link" id="career-link">Career History</a></li>
+					</ul>
 				</div>
 				<div class="nav-cta__container">
-					<a href="contact.html" class="contact__link" id="nav-link-cta">Contact Me</a>
+					<a href="contact.html" class="nav-bar__link nav-link--cta" id="contact-link">Contact Me</a>
 				</div>
 			</nav>
 		</div>
 	</header>
 
-
-	<!-- MAIN CONTENT -->
 	<main class="main">
 		<div class="container main__container">
 			<!-- Hero section on landing page -->
 			<section class="hero">
-				<div class="container hero_container">
+				<div class="container hero__container">
 					<!-- Hero intro heading -->
 					<h2 class="hero-intro-text">
 						Hi I'm <strong>Nhi</strong>,<br>
@@ -85,33 +77,45 @@
 						<strong>Full Stack Web Developer</strong>
 					</h2>
 					<!-- Profile photo box - add border with radius, align center -->
-					<div class="profile-photo-container">
+					<div class="profile-photo__container">
 						<img class="profile-photo" src="./src/images/profile-photo.png" alt="Photo of me, Nhi">
 					</div>
 					<!-- Hero subtext, add styling and line breaks, align left/center? -->
 					<p class="hero-sub-text">
 						Driven by a passion for<br>
-						<b>human-centred design,</b><br>
+						<b>human-centered design,</b><br>
 						a <b>problem-solving mindset,</b><br>
 						and <b>commitment to learning,</b><br>
 						<em>my goal is to bring ideas to life through digital experiences that just feel right.</em>
 					</p>
 					<!-- Hero section CTA button - for mobile use Contact Me, for wide tablet + desktop use Contact Me/Download CV -->
-					<button class="btn btn-hero--cta">Contact Me</button>
+					<button class="btn" id="btn-hero--cta">Contact Me</button>
 				</div>
 			</section>
 			
 			<!-- About Me section on landing page -->	
-			<section class="about" id="about">
+			<section class="about">
 				<!-- Outer container for About section -->
-				<div class="container about_container">
+				<div class="container" id="about__container">
 					<!-- Container including icon and section heading elements (to introduce new content sections)-->
 					<div class="icon_heading_container">
 						<span class="material-symbols-rounded" aria-labelledby="person icon">person</span>
 						<h3 class="section-heading">About Me</h3>
 					</div>
-					<p>About me short intro</p>
-					<button class="btn">Get to know me</button>
+
+					<p>A BRIEF INTRODUCTION<br>
+						NHI HUYNH</p>
+						<p>Currently studying Web Development at Coder Academy, working towards becoming a Full Stack Web Developer.</p>
+						<p>Located in Perth City, Western Australia</p>
+						<p>Proud Australian with a Vietnamese cultural heritage</p>
+						<p>Driven by determination, positivity, and the occasional vanilla oat latte, I’m committed to working hard and having fun along the way</p>
+						<p>A creative mind with a quirky twist, often leaving my friends wondering... ‘How did you even think of that?’</p>
+						<p>Neurodivergent & thriving navigating life with ADHD, fuelled by creativity, curiosity, and the occasional hyperfocus spiral.</p>
+					<button class="btn">Get to know me
+						<span class="material-symbols-rounded">
+							arrow_forward
+						</span>
+					</button>
 				<div>
 			</section>
 			</div>
@@ -127,10 +131,15 @@
 				<div>
 				
 				<div class="programming-languages">
+					<p>PROGRAMMING LANGUAGES</p>
 
 				</div>
 
-				<button class="btn">Explore my toolkit</button>
+				<button class="btn">Explore my toolkit
+					<span class="material-symbols-rounded">
+						arrow_forward
+					</span>
+				</button>
 			</section>
 			
 			<!-- Projects section on landing page -->
@@ -144,7 +153,11 @@
 					</div>
 					<div class="project-card">
 					<p>Project cards</p>
-					<button class="btn">Explore all projects</button>
+					<button class="btn">Explore all projects
+						<span class="material-symbols-rounded">
+							arrow_forward
+						</span>
+					</button>
 					</div>
 				</div>
 			</section>
@@ -160,8 +173,16 @@
 					</div>
 				<div>
 				<p>Career cards</p>
-				<button class="btn">Download CV</button>
-				<button class="btn">My career journey</button>
+				<button class="btn">Download CV
+					<span class="material-symbols-rounded">
+						arrow_forward
+					</span>
+				</button>
+				<button class="btn">My career journey
+					<span class="material-symbols-rounded">
+						arrow_forward
+					</span>
+				</button>
 			</section>
 			
 			<!-- Contact section on landing page -->
@@ -175,7 +196,11 @@
 					</div>
 				<div>
 				<p>Find me on LinkedIn, GitHub, shoot me an email or fill out the contact form in below link.</p>
-				<button class="btn">Get in touch</button>
+				<button class="btn">Get in touch
+					<span class="material-symbols-rounded">
+						arrow_forward
+					</span>
+				</button>
 			</section>
 
 			<section class="socials" id="socials">
@@ -187,23 +212,10 @@
 		</div>
 	</main>
 
-<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
-<footer class="footer">
-	<p>&#169; 2025 Nhi Huynh. All rights reserved.</p>
-</footer>
+	<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
+	<footer class="footer">
+		<p>&#169; 2025 Nhi Huynh. All rights reserved.</p>
+	</footer>
 
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	
 </body>
 </html>

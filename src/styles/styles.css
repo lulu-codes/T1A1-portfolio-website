@@ -1,8 +1,6 @@
-/* Import > :root > global styles > element styles */
+/* Import > :root > global styles > components/elements styles */
 
-
-/* Font styles: Poppins for headings and Inter for body.
-Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs' */
+/* FONT STYLES: Imported from Google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
@@ -26,196 +24,237 @@ Imported from Google fonts and have a back up fonts to fall back on 'sans-serifs
 	--btn-default: #98b9f2;
 	--btn-hover: #6f9ceb;
 	--btn-cta: #00ecae;
+
+	/* Colours for different link states (for burger menu nav dropdown - mobile and tablet) */
+	--burger-menu-active: rgba(145, 142, 244, 0.70);
+	--burger-menu-link: (145, 142, 244, 0.30);
+	--burger-menu-visited: (145, 142, 244, 0.30);
 }
-
-	/* --nav-btn-active: rgba(145, 142, 244, 0.70);
-	--nav-btn-inactive: rgba(145, 142, 244, 0.30);
-	--nav-btn-visited:  */
-
 	
-/* SETTING BORDER BOX PROPERTIES */
+/* SETTING GLOBAL STYLES PROPERTIES */
 * {
 	box-sizing: border-box;
-}
-
-/* Visual border outline guide - REMOVE LATER */
-/* * {
-	border-style: dashed;
-	border-color: red;
-	border-width: 1px;
-} */
-
-/* SETTING MARGIN LAYOUT TO 0 */
-* {
 	margin: 0;
 }
 
-/* DEFAULT FONT FAMILY AND FONT SIZE (For mobile = 16px = 1rem). Add fallback font-family style */
+/* DEFAULT FONT FAMILY AND FONT SIZE (For mobile = 16px = 1rem).  Poppins for headings and Inter/Roboto for body */
 body {
 	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
 	font-size: 1rem;
 }
 
+.material-symbols-rounded {
+		margin: 0;
+}
 
-/* HEADER STYLING */
-/* Sticky header applied to stay at top of screen */
-/* Height for mobile 64px (4rem), tablet 80px (5rem), desktop 128px (8rem) */
-/* Vertical sides padding for mobile 16px (1rem), tablet 32px (2rem), desktop 48px (3rem) */
-/* Mobile first design, so default sizes applied for mobile, then add media queries for adjustments to tablet and desktop */
+/* MOBILE FIRST DESIGN - Default sizes applied for mobile, then add media queries for adjustments to wider screens
+- TO ADJUST !!!
+- Height for mobile 64px (4rem), tablet 80px (5rem), desktop 128px (8rem)
+- Vertical sides padding for mobile 16px (1rem), tablet 32px (2rem), desktop 48px (3rem) */
+
+
+/* HEADER STYLING: Sticky header applied to stay at top of screen */
 .header {
-	top: 0;
 	position: sticky;
+	top: 0;
 	width: 100%;
 	background-color: var(--color-primary-dark);
-	padding: 0 1rem;
+	max-height: 5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	z-index: 10;
-	min-height: 4rem;
-	max-height: 4rem;
 }
 
-/* Media query for height of header adjustments across different devices for TABLET. */
-@media (min-width: 768px) {
-	.header {
-		padding: 0 2rem;
-		min-height: 5rem;
-		max-height: 5rem;
-	}
-}
-
-/* Media query for height of header adjustments across different devices for DESKTOP. */
-@media (min-width: 1024px) {
-	.header {
-		padding: 0 3rem;
-		min-height: 8rem;
-		max-height: 8rem;
-	}
-}
-/* HEADER AND NAVIGATION OUTER CONTAINER TO STYLE LAYOUT */
+/* HEADER AND NAVIGATION OUTER CONTAINER: For all header components = site brand (logo + title) + navigation menu/links */
 .header__container {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
 	width: 100%;
+	max-height: 5rem;
 	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	position: relative
 }
 
-/* <!-- Site brand container to wrap logo + title for side by side layout and positioned at the start of header container --> */
-.site-brand__wrapper {
+/* HEADER BRAND WRAPPER = for logo + title. Side by side with 1rem gap and positioned at the start of header container */
+.header-brand__wrapper {
 	display: flex;
-	flex-direction: row;
 	width: auto;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 1rem;
 }
 
 /* Site Logo sizing and constraints */
-#site-logo {
-	display: block;
-	width: 44px;
-	height: 44px;
+.header__site-logo {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	align-items: center;
 }
 
 /* Portfolio title styling */
-#portfolio-title {
-	display: block;
+.header__portfolio-title {
+	display: flex;
+	min-width: fit-content;
 	font-size: 1rem;
+	font-weight: 500;
 	color: var(--color-white);
 	text-transform: uppercase;
+	align-items: center;
 }
 
-/* BURGER MENU NAV (for mobile and tablet) */
+/*  MOBILE & TABLET NAVIGATION = collapsable burger menu (for devices width 360-768px) */
 
-/* Removing bullet points from nav links list */
-.burger-menu ul li {
+/* Burger menu container: Including burger menu toggle and nav menu list */
+.burger-menu__container {
+	display: flex;
+	position: relative;
+	padding: 0rem 1rem 2.75rem 1rem;
+}
+
+/* Burger menu toggle: This is actually a checkbox which I've included to act as the menu toggle.
+The burger menu icon imported from Google Symbols/Icons will overlap this checkbox so I've made checkbox opacity to 0.
+To control the following elements that are positioned to overlapping each other, I've defined a z-index score for each element/component.
+Positioning adjusted to get approx alignment of overlapping of elements -- would like to improve on this or understand a better way to do it as I found this the most challenging and tedious part */
+#burger-menu__toggle {
+	position: absolute;
+	top: 1;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+	z-index: 1;
+	margin-right: 1rem;
+	margin-top: 1rem;
+}
+
+/* Burger menu toggle wrapper: Including label elements for the toggle, used to position and to target the menu icons in the check logic to show/hide (via opacity change) */
+.burger-menu__toggle-wrapper {
+	display: flex;
+	position: relative;
+}
+
+/* Menu label added in white to help accessibility if burger menu icon not recognised */
+.burger-menu__label-text {
+	color: var(--color-white);
+	font-size: 1rem;
+}
+
+/* Adjust sizing and colour of burger menu icon and close icon. Changed sizing so meets min size for mobile =44px*44px) */
+#burger-menu__icon {
+	color: var(--color-white);
+	position: absolute;
+	padding-top: 0.5rem;
+	margin-left: 0.25rem;
+	font-size: 2.4rem;
+	opacity: 0;
+}
+
+#burger-menu__close-icon {
+	color: var(--color-white);
+	position: absolute;
+	padding-top: 0.5rem;
+	margin-left: 0.25rem;
+	font-size: 2.4rem;
+	opacity: 0;
+}
+
+/* For the below check logic to work and trigger the change from when the burger menu and close icon appears,
+I've set the opacity for both icons to '0' and when the burger menu toggle (hidden checkbox) then the relevant icon will show */
+/* Using checkbox check logic = By default, when the burger menu toggle is NOT CHECKED, it will display the burger menu 'menu icon' */
+#burger-menu__toggle:not(:checked) + .burger-menu__toggle-wrapper #burger-menu__icon {
+	opacity: 1;
+}
+
+/* Using checkbox check logic = When the burger menu toggle is CHECKED, it will display the burger menu 'close icon' */
+#burger-menu__toggle:checked + .burger-menu__toggle-wrapper #burger-menu__close-icon {
+	opacity: 1;
+}
+
+/* The burger menu list acts as a nav menu, when the 'checkbox/burger menu toggle' is pressed then the nav menu will appear */
+.burger-menu__list {
 	list-style-type: none;
-	display: block;
+	text-transform: uppercase;
+	background-color: var(--color-secondary-light);
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	margin-top: 0.5rem;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 11;
+	border-style: solid;
+	border-color: var(--color-primary);
+	border-width: 4px;
+	justify-content: center;
+}
+
+/* Using checkbox check logic = By default, when the burger menu toggle is NOT CHECKED, it will not display the menu */
+#burger-menu__toggle:not(:checked) ~ .burger-menu__list {
 	display: none;
 }
 
-/* Adjust sizing and colour of burger menu icon and 'menu' label to White (min button for mobile 44px). Used 3rem = 48px */
-#burger-menu-icon > .material-symbols-rounded {
-	color: var(--color-white);
-	display: block;
+/* When the burger menu toggle (in disguise of a checkbox) is pressed, it will show menu in top right below header */
+#burger-menu__toggle:checked ~ .burger-menu__list {
+	display: flex;
 }
 
-#burger-menu-icon > p {
-	color: var(--color-white);
-	display: block;
-}
-
-/* NEED HELP WITH THIS */
-#burger-menu-toggle {
-	transform: scale(3.5);
-}
-
-/* Mobile first design, desktop nav bar hidden, media breakpoint added below to when to show desktop bar */
-.desktop-nav-bar {
-	display: none;
-}
-
-/* Show desktop nav bar @ media breakpoint 992px+ for desktop*/
-/* @media screen and (min-width: 992px) {
-	.desktop-nav-bar {
-		display: flex;
-	}
-} */
-
-/* Desktop Nav bar */
-/* .desktop-nav-bar {
+/* Styling the burger menu nav links */
+.burger-menu__nav-link {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: var(--color-black);
+	height: 50px;
 	display: flex;
 	align-items: center;
-	width: 100%;
-} */
-
-/* .desktop-nav-bar a {
-	width: fit-content;
 	padding-left: 1rem;
-	padding-right: 1rem;
-	text-align: center;
-} */
-
-/* .nav-links__container {
-	justify-content: space-between;
-	gap: 1rem;
-} */
-
-/* Desktop CTA button */
-/* .nav-cta__container {
-	justify-content: end;
-} */
-
-/* Style CTA nav button */
-/* id="nav-link-cta" */
-
-/* .desktop-nav-bar a {
-	font-family: Poppins, Inter, Arial, Helvetica, sans-serif;
-	font-size: 1rem;
-	text-transform: uppercase;
-	text-align: center;
-	color: var(--color-white);
-	/* background-color: var(--color-secondary-light);
-	border-style: 2px solid var(--color-white);
-	border-radius: 32px;
-	padding: 0.5rem;
+	border-bottom: solid;
+	border-color: var(--color-primary);
+	border-width: 2px;
 }
-	*/
- 
 
-/* Links - change color on hover */
+.burger-menu__nav-link:active {
+	text-decoration: underline;
+	font-weight: 800;
+}
 
 
-/* TO DO: Create HTML and CSS burger menu with page links
-vertical-align and place in top right corner for nav burger menu */
+/* Hide default nav bar in mobile first design, media breakpoint below to show when screen widens to breakpoint (992px) */
+.nav--desktop-laptop,
+.nav-bar__container,
+.nav-bar__list,
+.nav-cta__container {
+	display: none;
+}
+
 
 .main__container {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	max-width: 1440px;
+	margin: 0;
+}
+
+.container {
+	width: auto;
+	max-width: 1200px;
+	margin: 0;
+	padding: 16px;
 }
 
 /* HERO SECTION STYLING & LAYOUT */
+.hero_container {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
 .hero-intro-text {
 	font-size: 2rem;
@@ -226,55 +265,62 @@ vertical-align and place in top right corner for nav burger menu */
 		}
 }
 
-.profile-photo-container {
+.profile-photo__container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 1rem;
 }
 
 .profile-photo {
-	display: flex;
-	width: 50%;
+	width: 60%;
 	max-width: 240px;
 	/* BORDER STYLING + box shadow */
-	/* border-style: solid;
-	border-width: 4px;
-	border-color: var(--color-accent); */
 	border: 2px solid var(--color-accent);
 	border-radius: 2rem;
 	box-shadow: 0.5rem 0.5rem 0.5rem var(--color-accent);
 }
 
 .hero-sub-text {
+	display: block;
 	text-align: center;
 	color: var(--color-primary-dark);
-	font-size: 1.1rem;
+	font-size: 1rem;
 	font-weight: 500;
-	line-height: 2rem;
+	line-height: 1.5rem;
 		b {
 			color: var(--color-primary);
 		}
 }
 
+/* Styling for btn classes on landing page under each section content to link to relevant pages */
 .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 1rem;
 	text-transform: uppercase;
-	padding: 1rem;
+	padding-right: 1rem;
+	padding-left: 2rem;
 	border-radius: 2rem;
 	font-weight: 700;
 	background-color: var(--color-secondary-light);
 	margin: 1rem;
+	width: auto;
 }
 
-.btn-hero--cta {
+/* Styling for hero landing page CTA 'contact me button' */
+#btn-hero--cta {
 	background-color: var(--btn-cta);
+	
 }
+
 
 /* CONTENT SECTIONS LAYOUT & STYLING */
 /* Auto width for section headings containers */
 
-.profile-photo-container,
-.hero_container,
+/* .profile-photo-container,
+.hero__container,
 .about_container,
 .skills_container,
 .projects_container,
@@ -284,7 +330,7 @@ vertical-align and place in top right corner for nav burger menu */
 	max-width: 1200px;
 	margin: 0;
 	padding: 16px;
-}
+} */
 
 /* Alternating sections have light blue background to separate content sections */
 section:nth-of-type(even) {
@@ -343,4 +389,154 @@ section:nth-of-type(even) {
 }
 
 
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) */
+
+/* Media query for height of header adjustments across different devices for TABLET. */
+/* Medium devices (landscape tablets, 768px and up) */
+
+
+/* @media screen and (min-width: 768px) {
+	.header {
+		padding: 0 2rem;
+		min-height: 5rem;
+		max-height: 5rem;
+	}
+} */
+
+
+
+
+
+
+/* Media query = hide nav--mobile-tablet and display nav__desktop-laptop on wider screens 992 / 1024px?? */
+@media screen and (min-width: 992px) {
+	.nav--mobile-tablet {
+		display: none;
+	}
+
+	/* Increase in height for header */
+	.header {
+		top: 0;
+		position: sticky;
+		width: 100%;
+		background-color: var(--color-primary-dark);
+		padding: 0;
+		height: 8rem;
+	}
+	
+	/* Header container styling/layout */
+	.header__container {
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		height: 8rem;
+	}
+
+	/* HEADER BRAND WRAPPER = for logo + title. Side by side with 1rem gap and positioned at the start of header container */
+	.header-brand__wrapper {
+		display: flex;
+		flex-direction: row;
+		width: auto;
+		justify-content:center;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	/* Site Logo sizing and constraints */
+	.header__site-logo {
+		display: block;
+		width: 60px;
+		height: 60px;
+	}
+
+	/* Portfolio title styling */
+	.header__portfolio-title {
+		display: block;
+		font-size: 1.25rem;
+		color: var(--color-white);
+		text-transform: uppercase;
+	}
+
+	.nav--desktop-laptop,
+	.nav-bar__container,
+	.nav-bar__list,
+	.nav-cta__container {
+		display: flex;
+	}
+
+	/* Desktop Nav bar */
+	.nav--desktop-laptop {
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		gap: 2rem;
+	}
+
+	.nav-bar__container {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	/* Desktop CTA button positioning */
+	.nav-cta__container {
+		justify-content: flex-end;
+		padding: 0 1rem 0 1rem;
+	}
+
+	/* Desktop nav link buttons and cta styling */
+	.nav-bar__list {
+		display: flex;
+		list-style-type: none;
+		justify-content: center;
+		width: 100%;
+		align-items: center;
+		text-align: center;
+		padding: 0 1rem 0 1rem;
+		gap: 1.5rem;
+	}
+
+	.nav-bar__link {
+		display: flex;
+		flex-wrap: nowrap;
+		font-size: 1rem;
+		text-transform: uppercase;
+		border-color: var(--color-white);
+		border-width: 3px;
+		border-style: solid;
+		padding: 0 1rem 0 1rem;
+		border-radius: 2rem;
+		background-color: var(--color-secondary-light);
+		height: 48px;
+		align-items: center;
+		text-align: center;
+		flex: auto;
+		width: fit-content;
+		min-width: 100px;
+		justify-content: center;
+	}
+	
+	/* .nav-link--cta {
+		background-color: var(--btn-cta);
+		min-width: 150px;
+	}
+
+	.nav-bar__link:hover {
+		background-color: var(--color-accent);
+	}
+	
+	.nav-bar__link:active {
+		background-color: var(--color-primary);
+	} */
+	
+}
+
+	/* Nav links styling for active, visited and hover */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) */
 

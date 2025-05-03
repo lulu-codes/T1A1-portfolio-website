@@ -1,45 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Nhi Huynh</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Me | Nhi Huynh</title>
 	<!-- Linking to my CSS stylesheet -->
 	<link rel="stylesheet" href="./src/styles/styles.css">
-	<!-- Linking stylesheet for Google Icons -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- Linking to Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+	<!-- Linking stylesheet for Google Symbols icon -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
 	<!-- Linking to my Favicon icon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./src/images/favicon_io/favicon-16x16.png">
 	<link rel="manifest" href="./src/images/favicon_io/site.webmanifest">
 </head>
+
 <body>
-	<!-- Header and navigation bar section -->
 	<header class="header">
-		<h1>Nhi Huynh Portfolio</h1>
-			<nav class="navbar">
-				<a href="index.html">Home</li>
-				<a href="about.html">About Me</a></li>
-				<a href="skills.html">Industry Skills</a></li>
-				<a href="projects.html">Projects</a></li>
-				<a href="career-history.html">Career History</a></li>
-				<a href="contact.html">Contact Me</a></li>
+		<div class="header__container">
+			<div class="header-brand__wrapper">
+				<a href="index.html">
+					<img class="header__site-logo" src="./src/images/my-website-logo.svg" alt="My custom website logo">
+				</a>
+				<h1 class="header__portfolio-title">Nhi Huynh<br>Portfolio</h1>
+			</div>
+			<!-- MOBILE & TABLET NAVIGATION = collapsable burger menu (for devices width 360-768px) -->
+			<nav class="nav nav--mobile-tablet">
+				<div class="burger-menu__container">
+					<input type="checkbox" id="burger-menu__toggle"/>
+					<label for="burger-menu__toggle" class="burger-menu__toggle-wrapper">
+						<p class="burger-menu__label-text">MENU</p>
+						<span class="material-symbols-rounded" id="burger-menu__icon">menu</span>
+						<span class="material-symbols-rounded" id="burger-menu__close-icon">close</span>
+					</label>
+					<ul class="burger-menu__list">
+						<li><a href="index.html" class="burger-menu__nav-link" id="home-link" aria-current="page">Home</a></li>
+						<li><a href="about.html" class="burger-menu__nav-link" id="about-link">About Me</a></li>
+						<li><a href="skills.html" class="burger-menu__nav-link" id="skills-link">Industry Skills</a></li>
+						<li><a href="projects.html" class="burger-menu__nav-link" id="projects-link">Projects</a></li>
+						<li><a href="career-history.html" class="burger-menu__nav-link" id="career-link">Career History</a></li>
+						<li><a href="contact.html" class="burger-menu__nav-link" id="contact-link">Contact Me</a></li>
+					</ul>
+				</div>
 			</nav>
+			<!-- DESKTOP & LAPTOP NAVIGATION = header nav bar (for devices over 992px / or 1024px? width) -->
+			<nav class="nav nav--desktop-laptop">
+				<div class="nav-bar__container">
+					<ul class="nav-bar__list">
+						<li><a href="index.html" class="nav-bar__link" id="home-link" aria-current="page">Home</a></li>
+						<li><a href="about.html" class="nav-bar__link" id="about-link">About Me</a></li>
+						<li><a href="skills.html" class="nav-bar__link" id="skills-link">Industry Skills</a></li>
+						<li><a href="projects.html" class="nav-bar__link" id="projects-link">Projects</a></li>
+						<li><a href="career-history.html" class="nav-bar__link" id="career-link">Career History</a></li>
+					</ul>
+				</div>
+				<div class="nav-cta__container">
+					<a href="contact.html" class="nav-bar__link nav-link--cta" id="contact-link">Contact Me</a>
+				</div>
+			</nav>
+		</div>
 	</header>
 
-    <main class="about">
+    <main class="About Me">
         <h1>About Me</h1>
     </main>
-	
+
+
 	<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
 	<footer class="footer">
-		<h4>Let's Connect!</h4>
-		<a href="https://www.linkedin.com/in/nhi-huynh-50268a169/">LinkedIn</a>
-		<a href="https://github.com/lulu-codes">GitHub</a>
-		<a href="mailto:16298@coderacademy.com.au">Email</a>
-		<p>© 2025 Nhi Huynh. All rights reserved.</p>
+		<p>&#169; 2025 Nhi Huynh. All rights reserved.</p>
 	</footer>
-		
+
 </body>
 </html>
