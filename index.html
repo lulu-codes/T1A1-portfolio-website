@@ -4,218 +4,243 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Nhi Huynh - Professional Portfolio</title>
-	<!-- Linking to my CSS stylesheet -->
+	<!-- Linking to CSS stylesheet -->
 	<link rel="stylesheet" href="./src/styles/styles.css">
 	<!-- Linking to Google Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
-	<!-- Linking stylesheet for Google Symbols icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
+	<!-- Linking to Font Awesome kit -->
+	<script src="https://kit.fontawesome.com/520abd6e1d.js" crossorigin="anonymous"></script>
+	<!-- Linking to dev icons used in skills section -->
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 	<!-- Linking to my Favicon icon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon_io/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon_io/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./src/images/favicon_io/favicon-16x16.png">
 	<link rel="manifest" href="./src/images/favicon_io/site.webmanifest">
 </head>
-
 <body>
-	<header class="header">
+	<header>
 		<div class="header__container">
-			<div class="header-brand__wrapper">
-				<a href="index.html">
-					<img class="header__site-logo" src="./src/images/my-website-logo.svg" alt="My custom website logo">
-				</a>
-				<h1 class="header__portfolio-title">Nhi Huynh<br>Portfolio</h1>
+			<div class="header__brand-wrapper">
+				<img class="site-logo" src="./src/images/my-website-logo.svg" alt="My custom website logo">
+				<h1 class="portfolio-title">Nhi Huynh<br>Portfolio</h1>
 			</div>
-			<!-- MOBILE & TABLET NAVIGATION = collapsable burger menu (for devices width 360-768px) -->
-			<nav class="nav nav--mobile-tablet">
-				<div class="burger-menu__container">
-					<input type="checkbox" id="burger-menu__toggle"/>
-					<label for="burger-menu__toggle" class="burger-menu__toggle-wrapper">
-						<p class="burger-menu__label-text">MENU</p>
-						<span class="material-symbols-rounded" id="burger-menu__icon">menu</span>
-						<span class="material-symbols-rounded" id="burger-menu__close-icon">close</span>
-					</label>
-					<ul class="burger-menu__list">
-						<li><a href="index.html" class="burger-menu__nav-link" id="home-link" aria-current="page">Home</a></li>
-						<li><a href="about.html" class="burger-menu__nav-link" id="about-link">About Me</a></li>
-						<li><a href="skills.html" class="burger-menu__nav-link" id="skills-link">Industry Skills</a></li>
-						<li><a href="projects.html" class="burger-menu__nav-link" id="projects-link">Projects</a></li>
-						<li><a href="career-history.html" class="burger-menu__nav-link" id="career-link">Career History</a></li>
-						<li><a href="contact.html" class="burger-menu__nav-link" id="contact-link">Contact Me</a></li>
-					</ul>
-				</div>
-			</nav>
-			<!-- DESKTOP & LAPTOP NAVIGATION = header nav bar (for devices over 992px / or 1024px? width) -->
-			<nav class="nav nav--desktop-laptop">
-				<div class="nav-bar__container">
-					<ul class="nav-bar__list">
-						<li><a href="index.html" class="nav-bar__link" id="home-link" aria-current="page">Home</a></li>
-						<li><a href="about.html" class="nav-bar__link" id="about-link">About Me</a></li>
-						<li><a href="skills.html" class="nav-bar__link" id="skills-link">Industry Skills</a></li>
-						<li><a href="projects.html" class="nav-bar__link" id="projects-link">Projects</a></li>
-						<li><a href="career-history.html" class="nav-bar__link" id="career-link">Career History</a></li>
-					</ul>
-				</div>
-				<div class="nav-cta__container">
-					<a href="contact.html" class="nav-bar__link nav-link--cta" id="contact-link">Contact Me</a>
-				</div>
+			<nav class="nav">
+				<input type="checkbox" class="checkbox-toggle" id="checkbox-toggle"/>
+				<label for="checkbox-toggle" class="toggle-icons" aria-label="navigation menu toggle">
+					<i class="menu-icon fa-solid fa-bars fa-3x" aria-label="click to open navigation menu"></i>
+					<i class="close-icon fa-regular fa-circle-xmark fa-3x" aria-label="click to close navigation menu"></i>
+				</label>
+				<ul class="burger-menu__list">
+					<li>
+						<h2>Explore My Portfolio</h2>
+					</li>
+					<li class="nav__list-item">
+						<a href="index.html" class="menu__link" aria-label="Go to Home page" aria-current="page">
+							<i class="fa-solid fa-house" aria-hidden="true"></i>Home
+						</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="about.html" class="menu__link" aria-label="Go to About Me page">
+							<i class="fa-regular fa-circle-user" aria-hidden="true"></i>About Me
+						</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="skills.html" class="menu__link" aria-label="Go to Industry Skills page">
+							<i class="fa-solid fa-laptop-code" aria-hidden="true"></i>Industry Skills
+						</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="projects.html" class="menu__link" aria-label="Go to Projects page">
+							<i class="fa-regular fa-folder" aria-hidden="true"></i>Projects
+						</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="career-history.html" class="menu__link" aria-label="Go to Career History page">
+							<i class="fa-solid fa-briefcase" aria-hidden="true"></i>Career History
+						</a>
+					</li>
+					<li class="nav__list-item">
+						<a href="contact.html" class="menu__link" aria-label="Go to Contact Me page">
+							<i class="fa-regular fa-envelope" aria-hidden="true"></i>Contact Me
+						</a>
+					</li>
+				</ul>
 			</nav>
 		</div>
 	</header>
-
-	<main class="main">
-		<div class="container main__container">
-			<!-- Hero section on landing page -->
-			<section class="hero">
-				<div class="container hero__container">
-					<!-- Hero intro heading -->
-					<h2 class="hero-intro-text">
-						Hi I'm <strong>Nhi</strong>,<br>
-						I’m on the journey to becoming a<br>
-						<strong>Full Stack Web Developer</strong>
-					</h2>
-					<!-- Profile photo box - add border with radius, align center -->
-					<div class="profile-photo__container">
-						<img class="profile-photo" src="./src/images/profile-photo.png" alt="Photo of me, Nhi">
-					</div>
-					<!-- Hero subtext, add styling and line breaks, align left/center? -->
-					<p class="hero-sub-text">
-						Driven by a passion for<br>
-						<b>human-centered design,</b><br>
-						a <b>problem-solving mindset,</b><br>
-						and <b>commitment to learning,</b><br>
-						<em>my goal is to bring ideas to life through digital experiences that just feel right.</em>
-					</p>
-					<!-- Hero section CTA button - for mobile use Contact Me, for wide tablet + desktop use Contact Me/Download CV -->
-					<button class="btn" id="btn-hero--cta">Contact Me</button>
+	<main>
+		<section class="hero-landing-section">
+			<div class="responsive-container">
+				<h2 class="hero__intro">Hi, <span class="hero__intro--bold">I'm Nhi</span> &#x1F44B;<br>
+					I’m on the journey to becoming a<br>
+					<span class="hero__intro--bold">Full Stack Web Developer</span>
+				</h2>
+				<div class="hero__image-wrapper">
+					<img class="hero__profile-photo" src="./src/images/profile-photo.png" alt="Photo of me, Nhi">
 				</div>
-			</section>
-			
-			<!-- About Me section on landing page -->	
-			<section class="about">
-				<!-- Outer container for About section -->
-				<div class="container" id="about__container">
-					<!-- Container including icon and section heading elements (to introduce new content sections)-->
-					<div class="icon_heading_container">
-						<span class="material-symbols-rounded" aria-labelledby="person icon">person</span>
-						<h3 class="section-heading">About Me</h3>
-					</div>
-
-					<p>A BRIEF INTRODUCTION<br>
-						NHI HUYNH</p>
-						<p>Currently studying Web Development at Coder Academy, working towards becoming a Full Stack Web Developer.</p>
-						<p>Located in Perth City, Western Australia</p>
-						<p>Proud Australian with a Vietnamese cultural heritage</p>
-						<p>Driven by determination, positivity, and the occasional vanilla oat latte, I’m committed to working hard and having fun along the way</p>
-						<p>A creative mind with a quirky twist, often leaving my friends wondering... ‘How did you even think of that?’</p>
-						<p>Neurodivergent & thriving navigating life with ADHD, fuelled by creativity, curiosity, and the occasional hyperfocus spiral.</p>
-					<button class="btn">Get to know me
-						<span class="material-symbols-rounded">
-							arrow_forward
-						</span>
-					</button>
-				<div>
-			</section>
+				<p class="hero__sub-text">
+					Driven by a passion for<br>
+					<b>human-centered design,</b><br>
+					a <b>problem-solving mindset,</b><br>
+					and <b>commitment to learning,</b><br>
+					my goal is to bring ideas to life through digital experiences that just <em>feel</em> right.
+				</p>
+				<a href="contact.html" class="hero__btn--cta" aria-label="Get in touch me">
+					<span>Get in touch</span>
+					<i class="fa-regular fa-message" aria-hidden="true"></i>
+				</a>
 			</div>
-			<!-- Industry Skills section on landing page -->		
-			<section class="skills" id="skills">
-				<!-- Outer container for skills section -->
-				<div class="container skills_container">
-					<!-- Container including icon and section heading elements (to introduce new content sections)-->
-					<div class="icon_heading_container">
-						<span class="material-symbols-rounded" aria-labelledby="skills icon">code_blocks</span>
-						<h3 class="section-heading">Industry Skills</h3>
-					</div>
-				<div>
-				
-				<div class="programming-languages">
-					<p>PROGRAMMING LANGUAGES</p>
-
+		</section>
+		<section class="about-landing-section">
+			<div class="responsive-container"></div>
+				<h2 class="section__title-heading">
+					<i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+					About Me
+				</h2>
+				<h3>A brief introduction<br>to who I am in a nutshell<br></h3>
+				<ul class="about__list responsive-container">
+					<li>&#127891; Currently studying Web Development at Coder Academy, working towards becoming a Full Stack Web Developer.</li>
+					<li>&#128205; Located in Perth City, Western Australia</li>
+					<li>&#129511; Proud Australian with a Vietnamese cultural heritage</li>
+					<li>&#9749; Driven by determination, positivity, and a tad too much caffeine, I’m committed to working hard and having fun along the way</li>
+					<li>&#129504; A creative mind with a quirky twist, often leaving my friends wondering... <i>‘How did you even think of that?’</i></li>
+					<li>&#128171; Navigating life fuelled by creativity, curiosity, and the occasional hyperfocus spiral.</li>
+				</ul>
+				<a href="about.html" class="section__link-btn" aria-label="Go to about me page">
+					<span>Get to know me</span>
+					<i class="fa-regular fa-circle-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
+		<section class="skills-landing-section">
+			<div class="responsive-container">
+				<h2 class="section__title-heading">
+					<i class="fa-solid fa-laptop-code"></i>
+					Industry Skills
+				</h2>
+				<h3>Programming Languages</h3>
+				<article class="skills__languages">
+					<figure class="skills__item skills__item--html">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="html icon"/>
+						<figcaption class="skills__label">HTML</figcaption>
+					</figure>
+					<figure class="skills__item skills__item--css">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="css icon"/>
+						<figcaption class="skills__label">CSS</figcaption>
+					</figure>
+					<figure class="skills__item skills__item--python">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="python icon"/>
+						<figcaption class="skills__label">Python</figcaption>
+					</figure>
+					<figure class="skills__item skills__item--javascript">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="javascript icon"/>
+						<figcaption class="skills__label">Javascript</figcaption>
+					</figure>
+				</article>
+				<a href="skills.html" class="section__link-btn" aria-label="Go to industry skills page">
+					<span>Explore my toolkit</span>
+					<i class="fa-regular fa-circle-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
+		<section class="projects-landing-section">
+			<div class="responsive-container">
+				<h2 class="section__title-heading">
+					<i class="fa-regular fa-folder" aria-hidden="true"></i>
+					Projects
+				</h2>
+				<div class="project__card-wrapper">
+					<article class="project__card" aria-label="Project highlight card">
+						<h3>Web Development</h3>
+						<img src="https://placehold.co/268x220?text=Placeholder+Image&font=poppins" alt="project placeholder image">
+						<h4>My Portfolio Website</h4>
+						<p>A personal portfolio responsive website showcasing my web development skills, projects and experience.</p>
+					</article>
 				</div>
-
-				<button class="btn">Explore my toolkit
-					<span class="material-symbols-rounded">
-						arrow_forward
-					</span>
-				</button>
-			</section>
-			
-			<!-- Projects section on landing page -->
-			<section class="projects" id="projects">
-				<!-- Outer container for projects section -->
-				<div class="container projects_container">
-					<!-- Container including icon and section heading elements (to introduce new content sections)-->
-					<div class="icon_heading_container">
-						<span class="material-symbols-rounded" aria-labelledby="projects icon">deployed_code</span>
-						<h3 class="section-heading">Projects</h3>
-					</div>
-					<div class="project-card">
-					<p>Project cards</p>
-					<button class="btn">Explore all projects
-						<span class="material-symbols-rounded">
-							arrow_forward
-						</span>
-					</button>
-					</div>
+				<a href="projects.html" class="section__link-btn" aria-label="Go to projects page">
+					<span>Explore all projects</span>
+					<i class="fa-regular fa-circle-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
+		<section class="career-landing-section">
+			<div class="responsive-container">
+				<h2 class="section__title-heading">
+					<i class="fa-solid fa-briefcase" aria-label="true"></i>
+					Career History
+				</h2>
+				<div class="career__card-wrapper">
+					<article class="career__card" aria-label="Career highlight card">
+						<h3>Bank Manager</h3>
+						<h4>Bankwest<h4>
+						<img src="./src/images/my-bankwest-photo.png" class="bankwest-photo" alt="Photo of me at my previous job at Bankwest">
+						</h5>2018 to 2024<h5>
+						<h4>Career Summary</h4>
+							<ul>
+								<li>Manage branch operations</li>
+								<li>Lead team performance and support development</li>
+								<li>Drive business strategy</li>
+								<li>Business development</li>
+							</ul>
+						<h4>Career Highlights</h4>
+							<p>2023 & 2024 National Ultimate Success Winner</p>
+						<div class="career__skills-tags">
+							<span>Financial Services</span>
+							<span>Team Management</span>
+							<span>Customer Service</span>
+							<span>Compliance & Risk</span>
+							<span>Digital Transformation</span>
+						</div>
+					</article>
 				</div>
-			</section>
-
-			<!-- Career section on landing page -->
-			<section class="career-history" id="career">
-				<!-- Outer container for career section -->
-				<div class="container career_container">
-					<!-- Container including icon and section heading elements (to introduce new content sections)-->
-					<div class="icon_heading_container">
-						<span class="material-symbols-rounded" aria-labelledby="career icon">work</span>
-						<h3 class="section-heading">Career History</h3>
-					</div>
-				<div>
-				<p>Career cards</p>
-				<button class="btn">Download CV
-					<span class="material-symbols-rounded">
-						arrow_forward
-					</span>
-				</button>
-				<button class="btn">My career journey
-					<span class="material-symbols-rounded">
-						arrow_forward
-					</span>
-				</button>
-			</section>
-			
-			<!-- Contact section on landing page -->
-			<section class="contact" id="contact">
-				<!-- Outer container for contact section -->
-				<div class="container contact_container">
-					<!-- Container including icon and section heading elements (to introduce new content sections)-->
-					<div class="icon_heading_container">
-						<span class="material-symbols-rounded" aria-labelledby="mail contact icon">mail</span>
-						<h3 class="section-heading">Contact Me</h3>
-					</div>
-				<div>
+				<a href="./src/docs/Nhi-Huynh-CV.pdf" target="_blank" class="download-cv-btn" aria-label="Click to download my resume">
+					<span>Download CV</span>
+					<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+				</a>
+				<a href="career-history.html" class="section__link-btn" aria-label="Go to my Career history page">
+					<span>My career journey</span>
+					<i class="fa-regular fa-circle-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
+		<section class="contact-landing-section">
+			<div class="responsive-container">
+				<h2 class="section__title-heading">
+					<i class="fa-regular fa-envelope" aria-hidden="true"></i>
+					Contact Me
+				</h2>
 				<p>Find me on LinkedIn, GitHub, shoot me an email or fill out the contact form in below link.</p>
-				<button class="btn">Get in touch
-					<span class="material-symbols-rounded">
-						arrow_forward
-					</span>
-				</button>
-			</section>
-
-			<section class="socials" id="socials">
-				<h3 class="section-heading">Let's Connect!<span class="material-symbols-rounded">send</span></h3>
-					<a href="https://www.linkedin.com/in/nhi-huynh-50268a169/">LinkedIn</a>
-					<a href="https://github.com/lulu-codes">GitHub</a>
-					<a href="mailto:16298@coderacademy.com.au">Email</a>
-			</section>
-		</div>
+				<a href="contact.html" class="section__link-btn" aria-label="Go to my Contact me page">
+					<span>Contact me</span>
+					<i class="fa-regular fa-circle-right" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
 	</main>
-
-	<!-- Footer section on landing page including 'Let's Connect heading', social links and copyright -->
-	<footer class="footer">
-		<p>&#169; 2025 Nhi Huynh. All rights reserved.</p>
+	<footer>
+		<section class="footer__socials">
+			<div class="responsive-container">
+				<h2 class="section__title-heading">
+					<i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+					Let's Connect!
+				</h2>
+				<div class="socials-icons">
+					<a href="https://www.linkedin.com/in/nhi-huynh-50268a169/" target="_blank" aria-label="Visit my LinkedIn profile">
+						<i class="fa-brands fa-linkedin fa-3x"></i>
+					</a>
+					<a href="https://github.com/lulu-codes" target="_blank" aria-label="Visit my GitHub profile">
+						<i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
+					</a>
+					<a href="mailto:16298@coderacademy.com.au" target="_blank" aria-label="Send me an email">
+						<i class="fa-regular fa-envelope fa-3x" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+		<h6 class="copyright">&#169; 2025 Nhi Huynh. All rights reserved.</h6>
 	</footer>
-
 </body>
 </html>
